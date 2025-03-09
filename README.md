@@ -29,9 +29,9 @@ This course balances academic frameworks with hands-on projects, emphasizing bot
 
 ## Getting Started
 
-1. Review the syllabus: [syllabus](https://Freddricklogan.github.io/tech-enhanced-learning/syllabus/)
-2. 3. Explore the weekly modules: [weekly modules](https://Freddricklogan.github.io/tech-enhanced-learning/modules/)
-Check the assignment schedule: [assignment schedule](https://Freddricklogan.github.io/tech-enhanced-learning/assignments/)
+1. Review the syllabus: [Syllabus](https://Freddricklogan.github.io/tech-enhanced-learning/syllabus/)
+2. Explore the weekly modules: [weekly modules](modules/)
+3. Check the assignment schedule: [assignment schedule](assignments/)
 
 ## For Instructors
 
