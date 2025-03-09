@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Technology Enhanced Learning</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="{{ site.baseurl }}/" class="site-title">TEL Course</a>
+      <nav class="main-nav">
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="{{ site.baseurl }}/syllabus/">Syllabus</a>
+        <a href="{{ site.baseurl }}/modules/">Modules</a>
+        <a href="{{ site.baseurl }}/assignments/">Assignments</a>
+        <a href="{{ site.baseurl }}/resources/">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Technology Enhanced Learning Course</p>
+    </div>
+  </footer>
+</body>
+</html>
