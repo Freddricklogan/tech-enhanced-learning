@@ -1,2 +1,10 @@
+title: Technology Enhanced Learning & Remote Work
+description: Develop skills for technology-driven remote environments
+baseurl: ""
+url: http://localhost:4000
+
+# Build settings
+markdown: kramdown
 theme: jekyll-theme-cayman
-baseurl: /tech-enhanced-learning
+plugins:
+  - jekyll-feed
