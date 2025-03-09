@@ -1,12 +1,12 @@
 # Technology Enhanced Learning & Remote Work Course
 
-![Course Banner](assets/images/course-banner.jpg)
+<p><img src="assets/images/course-banner.jpg" width="70%" alt="Course Banner"></p>
 
 A comprehensive 12-week course exploring how technology enhances learning and enables remote work opportunities across various industries.
 
 ## Live Course Website
 
-[View the Course Website](https://yourusername.github.io/tech-enhanced-learning/)
+[View the Course Website](https://Freddricklogan.github.io/tech-enhanced-learning/)
 
 ## Features
 
