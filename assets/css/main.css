@@ -98,7 +98,8 @@ a:hover {
 
 .main-nav {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
 }
 
 .main-nav a {
@@ -246,6 +247,12 @@ a:hover {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
   .featured-sections {
     grid-template-columns: 1fr;
   }
@@ -258,3 +265,10 @@ a:hover {
     font-size: 1.4rem;
   }
 }
+
+/* Unpublished items: shown as plain, non-interactive notes rather than dead links */
+.is-pending { opacity: 0.75; }
+.button.is-pending { cursor: default; }
+.module-schedule { padding-left: 1.25rem; }
+.module-schedule li { margin: 0.4rem 0; }
+.site-footer a { color: inherit; }

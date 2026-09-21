@@ -3,20 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} | Technology Enhanced Learning</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+  <title>{{ page.title | escape }} · TEL Course</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="author" content="Freddrick Logan">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/images/course-banner.jpg' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <a href="{{ site.baseurl }}/" class="site-title">TEL Course</a>
-      <nav class="main-nav">
-        <a href="{{ site.baseurl }}/">Home</a>
-        <a href="{{ site.baseurl }}/syllabus/">Syllabus</a>
-        <a href="{{ site.baseurl }}/modules/">Modules</a>
-        <a href="{{ site.baseurl }}/assignments/">Assignments</a>
-        <a href="{{ site.baseurl }}/resources/">Resources</a>
+      <a href="{{ '/' | relative_url }}" class="site-title">TEL Course</a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/syllabus/' | relative_url }}">Syllabus</a>
+        <a href="{{ '/modules/' | relative_url }}">Modules</a>
+        <a href="{{ '/assignments/' | relative_url }}">Assignments</a>
       </nav>
     </div>
   </header>
@@ -27,7 +37,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Technology Enhanced Learning Course</p>
+      <p>Technology Enhanced Learning &amp; Remote Work — course materials by Freddrick Logan, licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. <a href="https://github.com/Freddricklogan/tech-enhanced-learning">Source on GitHub</a>.</p>
     </div>
   </footer>
 </body>
