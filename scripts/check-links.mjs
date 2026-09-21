@@ -1,10 +1,9 @@
 // Internal link check over the built site: every relative or base-prefixed href/src must resolve
 // to a file in _site. External links are the advisory lychee job's business.
-import { readFileSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, existsSync, statSync, globSync } from 'node:fs';
 import { join, dirname, normalize } from 'node:path';
-import { globSync } from 'node:fs';
 
-const base = '/tech-enhanced-learning';
+const base = /^baseurl:\s*(\S+)/m.exec(readFileSync('_config.yml', 'utf8'))[1];
 const files = globSync('_site/**/*.html');
 let refs = 0;
 const broken = [];
