@@ -1,0 +1,14 @@
+{
+  "name": "tech-enhanced-learning",
+  "private": true,
+  "description": "Course site (Jekyll). Scripts build with the locked github-pages gem and validate the output.",
+  "scripts": {
+    "build": "bundle exec jekyll build --strict_front_matter",
+    "validate": "html-validate \"_site/**/*.html\"",
+    "check": "npm run build && npm run validate && npm run links",
+    "links": "node scripts/check-links.mjs"
+  },
+  "devDependencies": {
+    "html-validate": "^9.0.0"
+  }
+}
