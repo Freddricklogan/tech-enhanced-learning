@@ -1,10 +1,20 @@
 title: Technology Enhanced Learning & Remote Work
-description: Develop skills for technology-driven remote environments
-baseurl: ""
-url: http://localhost:4000
+description: A twelve-week course on how technology enhances learning and enables remote work — syllabus, weekly modules and assignments.
+url: https://freddricklogan.github.io
+baseurl: /tech-enhanced-learning
 
-# Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman
-plugins:
-  - jekyll-feed
+exclude:
+  - README.md
+  - AUDIT.md
+  - docs/
+  - setup-tel-course.sh
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - scripts/
+  - vendor/
+  - .bundle/
+  - .htmlvalidate.json
