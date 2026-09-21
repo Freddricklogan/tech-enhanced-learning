@@ -14,7 +14,7 @@ Pages was set to serve the `/docs` folder of `main`. There is no
 `docs/` folder, so `https://freddricklogan.github.io/tech-enhanced-learning/`
 returned GitHub's "Site not found" page. A `test.md` left over from
 diagnosing this was still in the repository. **Fix:** a workflow
-builds the site with the locked `github-pages` gem, validates every
+builds the site from a locked Gemfile, validates every
 page and deploys the artifact; Pages switched to workflow builds.
 `test.md` removed.
 
@@ -61,6 +61,12 @@ A built-site link checker (`scripts/check-links.mjs`) now runs in CI:
   `baseurl`; set to the Pages URL and `/tech-enhanced-learning`. The
   unused Cayman theme and `jekyll-feed` (no posts) removed; README,
   generator script, tooling files excluded from the build.
+- The `github-pages` gem pinned Jekyll 3.9.5 and a lockfile in which
+  Trivy found 9 HIGH/CRITICAL findings (nokogiri 1.13.10,
+  concurrent-ruby 1.3.5, rubyzip 2.4.1, faraday 2.8.1, addressable
+  2.8.7, activesupport 6.1.7.10). The site uses none of that gem's
+  plugins, so the Gemfile is now plain `jekyll ~> 4.3`; the new
+  lockfile scans clean.
 
 ## D. Content left as it was
 

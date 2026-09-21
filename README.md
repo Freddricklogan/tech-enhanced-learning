@@ -15,7 +15,7 @@ its layout to a misplaced SEO block, and the navigation linked to
 pages that were never written.
 
 **What this delivers.** The site back online through a CI pipeline
-that builds it with the locked `github-pages` gem, validates every
+that builds it from a locked Gemfile (plain Jekyll 4), validates every
 page, checks every internal link and only then deploys. The content
 is unchanged: a syllabus, the Week 1 module and the Personal
 Productivity assignment. Where the syllabus promises material that is
@@ -42,7 +42,7 @@ page reaches them.
 index.html, syllabus/, modules/, assignments/   (Liquid pages, front matter)
 _layouts/default.html + assets/css/main.css     (one layout, one stylesheet)
         │
-        ▼  bundle exec jekyll build --strict_front_matter   (github-pages 231 / jekyll 3.9.5, locked)
+        ▼  bundle exec jekyll build --strict_front_matter   (jekyll 4.4.1, locked)
       _site/
         │  html-validate (recommended + no-inline-style)
         │  scripts/check-links.mjs (46 internal refs, 0 broken)
@@ -56,9 +56,11 @@ the only third-party resource.
 ## 4. Technical Highlights & Engineering Decisions
 
 - **Build from the lockfile, not the legacy builder.** The workflow
-  installs the exact `github-pages` gem the lockfile names, so the
-  page that passed validation is the page that deploys, and a gem
-  upgrade is a visible diff.
+  installs the exact gems the lockfile names, so the page that passed
+  validation is the page that deploys, and a gem upgrade is a visible
+  diff. The `github-pages` gem was dropped: it pinned Jekyll 3.9 and a
+  set of transitive gems Trivy flagged, and the site uses none of the
+  plugins it exists to provide.
 - **Unpublished is a state, not a broken link.** Weeks 2–12 and seven
   assignments exist in the syllabus but not as pages; they are listed
   with their titles and marked as not yet published. The link checker
@@ -75,7 +77,7 @@ the only third-party resource.
 
 ## 5. Getting Started & Verification
 
-**Prerequisites.** Ruby 3.1 with Bundler, Node 22.
+**Prerequisites.** Ruby 3.3+ with Bundler, Node 22.
 
 ```bash
 git clone https://github.com/Freddricklogan/tech-enhanced-learning.git
@@ -89,10 +91,11 @@ bundle exec jekyll serve          # http://127.0.0.1:4000/tech-enhanced-learning
 
 | Check | Result |
 | --- | --- |
-| Jekyll build (strict front matter) | 6 pages |
+| Jekyll build (strict front matter) | 6 pages (Jekyll 4.4.1, plain — see below) |
 | html-validate | **0 errors** over 6 built pages (after encoding 34 bare ampersands and removing the inline-styled element) |
 | Internal links | **46 references, 0 broken** (was: 2 nav targets, 2 home cards, 2 week-1 buttons, 10 `href="#"` placeholders) |
 | Browser smoke (headless Chrome) | all 6 pages: **0 console errors / 0 warnings**; no horizontal scroll at 1280 or 400 px (nav previously overflowed to 516 px at 400) |
+| Trivy (Gemfile.lock + package-lock.json) | **0 findings** — the previous `github-pages` lockfile carried 9 HIGH/CRITICAL findings in transitive gems (nokogiri, concurrent-ruby, rubyzip, faraday, addressable, activesupport) |
 | Tests | none — the repository contains no program logic; the gates above are the verification |
 
 ## 6. Live Demo & Production Showcase
