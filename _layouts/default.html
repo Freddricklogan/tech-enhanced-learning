@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="ember" data-scheme="light">
+<html lang="en" data-theme="ember">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="{{ '/assets/theme-tokens.css' | relative_url }}">
+  <script src="{{ '/assets/theme-toggle.js' | relative_url }}"></script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
@@ -29,6 +30,7 @@
         <a href="{{ '/modules/' | relative_url }}">Modules</a>
         <a href="{{ '/assignments/' | relative_url }}">Assignments</a>
       </nav>
+      <span data-scheme-toggle></span>
     </div>
   </header>
 

@@ -1,7 +1,7 @@
 /* Base styles */
 :root {
   /* Site colours resolve to the portfolio's category palette (assets/theme-tokens.css, ember),
-     which follows the OS colour scheme. */
+     dark by default; the header toggle (assets/theme-toggle.js) pins the light variant. */
   --primary-color: var(--accent);
   --secondary-color: var(--accent-2);
   --accent-color: var(--accent-2);
