@@ -15,6 +15,7 @@ exclude:
   - package-lock.json
   - node_modules/
   - scripts/
+  - assets/contrast-check.mjs
   - vendor/
   - .bundle/
   - .htmlvalidate.json
