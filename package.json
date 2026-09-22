@@ -5,8 +5,9 @@
   "scripts": {
     "build": "bundle exec jekyll build --strict_front_matter",
     "validate": "html-validate \"_site/**/*.html\"",
-    "check": "npm run build && npm run validate && npm run links",
-    "links": "node scripts/check-links.mjs"
+    "check": "npm run contrast && npm run build && npm run validate && npm run links",
+    "links": "node scripts/check-links.mjs",
+    "contrast": "node assets/contrast-check.mjs assets/theme-tokens.css"
   },
   "devDependencies": {
     "html-validate": "^9.0.0"
