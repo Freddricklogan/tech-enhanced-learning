@@ -1,13 +1,15 @@
 /* Base styles */
 :root {
-  --primary-color: #4361ee;
-  --secondary-color: #3a0ca3;
-  --accent-color: #4cc9f0;
-  --dark-color: #1d3557;
-  --light-color: #f8f9fa;
-  --grey-color: #6c757d;
-  --success-color: #2ecc71;
-  --warning-color: #f39c12;
+  /* Site colours resolve to the portfolio's category palette (assets/theme-tokens.css, ember),
+     which follows the OS colour scheme. */
+  --primary-color: var(--accent);
+  --secondary-color: var(--accent-2);
+  --accent-color: var(--accent-2);
+  --dark-color: var(--text);
+  --light-color: var(--panel);
+  --grey-color: var(--muted);
+  --success-color: var(--ok);
+  --warning-color: var(--warn);
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-secondary: 'Manrope', sans-serif;
   --transition: all 0.3s ease;
@@ -23,7 +25,8 @@ body {
   font-family: var(--font-primary);
   line-height: 1.6;
   color: var(--dark-color);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-color: var(--bg);
+  background-image: linear-gradient(135deg, var(--bg) 0%, var(--panel-2) 100%);
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -76,7 +79,7 @@ a:hover {
 
 /* Site Header */
 .site-header {
-  background-color: white;
+  background-color: var(--panel);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
   position: sticky;
@@ -129,7 +132,7 @@ a:hover {
 
 /* Course Card */
 .course-card {
-  background-color: white;
+  background-color: var(--panel);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -151,7 +154,7 @@ a:hover {
 }
 
 .section-card {
-  background-color: white;
+  background-color: var(--panel);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -206,7 +209,7 @@ a:hover {
 .button {
   display: inline-block;
   background-color: var(--primary-color);
-  color: white;
+  color: var(--on-accent);
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: 600;
@@ -222,7 +225,7 @@ a:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-decoration: none;
-  color: white;
+  color: var(--on-accent);
 }
 
 .button-outline {
@@ -233,13 +236,13 @@ a:hover {
 
 .button-outline:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--on-accent);
 }
 
 /* Footer */
 .site-footer {
-  background-color: var(--dark-color);
-  color: white;
+  background-color: var(--panel-2);
+  color: var(--text);
   padding: 2rem 0;
   margin-top: 4rem;
   text-align: center;
