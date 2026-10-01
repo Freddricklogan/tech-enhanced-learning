@@ -1,0 +1,147 @@
+/* Tour card and buttons, vendored from the portfolio Executive Shell (same tokens as theme-tokens.css). */
+.exec-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--shell-speed) ease, border-color var(--shell-speed) ease;
+}
+
+/* The button stays hidden on pages without a tour (its display rule would override [hidden]). */
+.exec-btn[hidden] {
+  display: none;
+}
+
+.exec-btn:hover {
+  background: var(--btn-hover);
+  border-color: var(--accent);
+}
+
+.exec-btn--icon {
+  padding: 9px 10px;
+  line-height: 0;
+}
+
+.exec-btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.exec-btn--primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.exec-tour-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--shell-z-tour);
+  background: var(--backdrop);
+}
+
+.exec-tour-backdrop[hidden] {
+  display: none;
+}
+
+.exec-tour-spot {
+  position: absolute;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 9999px var(--backdrop), 0 0 22px var(--accent-glow);
+  pointer-events: none;
+  transition: all var(--shell-speed) ease;
+}
+
+.exec-tour-card {
+  position: absolute;
+  width: min(360px, calc(100vw - 2 * var(--gutter)));
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.exec-tour-card__step {
+  font-size: 0.7rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.exec-tour-card__title {
+  margin: 6px 0 6px;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.exec-tour-card__body {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.exec-tour-card__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.exec-tour-card__nav .exec-tour-card__spacer {
+  flex: 1;
+}
+
+.exec-tour-card__hint {
+  margin: 10px 0 0;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.exec-tour-card__hint kbd {
+  font-family: var(--shell-mono);
+  font-size: 0.7rem;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+/* --- forced colors ------------------------------------------------------- */
+
+@media (forced-colors: active) {
+  .exec-tour-spot {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
+  .exec-btn {
+    border: 1px solid ButtonText;
+  }
+}
+
+/* The tour card never runs past the viewport: it scrolls inside, and Back / Next stay reachable. */
+.exec-tour-card {
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.exec-tour-card__nav {
+  position: sticky;
+  bottom: -18px;
+  padding-bottom: 2px;
+  background: inherit;
+}

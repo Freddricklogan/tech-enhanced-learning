@@ -28,7 +28,7 @@ I rejected rebuilding the site on a different generator, and I rejected writing 
 
 ## 6. Evidence
 
-The build produces six pages and passes `html-validate` with no errors, after encoding 34 bare ampersands, escaping the Liquid output in the head, shortening one over-long title and removing the inline-styled element. The link checker reports 46 internal references and 0 broken; before the repair the navigation had two dead targets, the home page two, the Week 1 page two, and there were ten `href="#"` placeholders. A headless-Chrome pass over all six pages logged no console errors or warnings and found no horizontal overflow at 1280 or 400 pixels — the original header nav could not wrap and pushed every page to 516 pixels at a 400-pixel viewport. There are no unit tests because there is no program logic; the validation, link and build gates are the verification.
+The build produces six pages and passes `html-validate` with no errors, after encoding 34 bare ampersands, escaping the Liquid output in the head, shortening one over-long title and removing the inline-styled element. The link checker reports 46 internal references and 0 broken; before the repair the navigation had two dead targets, the home page two, the Week 1 page two, and there were ten `href="#"` placeholders. A headless-Chrome pass over all six pages logged no console errors or warnings and found no horizontal overflow at 1280 or 400 pixels — the original header nav could not wrap and pushed every page to 516 pixels at a 400-pixel viewport. The only program logic is the home page's guided tour, whose card placement has eight `node --test` cases; the validation, link and build gates verify the rest.
 
 ## 7. What it would take to run this in production
 

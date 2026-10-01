@@ -93,10 +93,10 @@ bundle exec jekyll serve          # http://127.0.0.1:4000/tech-enhanced-learning
 | --- | --- |
 | Jekyll build (strict front matter) | 6 pages (Jekyll 4.4.1, plain — see below) |
 | html-validate | **0 errors** over 6 built pages (after encoding 34 bare ampersands and removing the inline-styled element) |
-| Internal links | **46 references, 0 broken** (was: 2 nav targets, 2 home cards, 2 week-1 buttons, 10 `href="#"` placeholders) |
+| Internal links | **70 references, 0 broken** (measured 2026-10-01: 58 before the tour, 70 with its two assets on each of the 6 pages; 46 at the original repair. Was: 2 nav targets, 2 home cards, 2 week-1 buttons, 10 `href="#"` placeholders) |
 | Browser smoke (headless Chrome) | all 6 pages: **0 console errors / 0 warnings**; no horizontal scroll at 1280 or 400 px (nav previously overflowed to 516 px at 400) |
 | Trivy (Gemfile.lock + package-lock.json) | **0 findings** — the previous `github-pages` lockfile carried 9 HIGH/CRITICAL findings in transitive gems (nokogiri, concurrent-ruby, rubyzip, faraday, addressable, activesupport) |
-| Tests | none — the repository contains no program logic; the gates above are the verification |
+| Tests | **8 passing** (`npm test`, `node --test`): the guided tour's card placement, the only program logic; the gates above verify the rest |
 
 ## 6. Live Demo & Production Showcase
 
