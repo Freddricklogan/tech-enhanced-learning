@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="{{ '/assets/theme-tokens.css' | relative_url }}">
   <script src="{{ '/assets/theme-toggle.js' | relative_url }}"></script>
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/tour.css' | relative_url }}">
+  <script type="module" src="{{ '/assets/tour-init.js' | relative_url }}"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
@@ -30,6 +32,7 @@
         <a href="{{ '/modules/' | relative_url }}">Modules</a>
         <a href="{{ '/assignments/' | relative_url }}">Assignments</a>
       </nav>
+      <button type="button" id="exec-tour-start" class="exec-btn" hidden>Take the tour</button>
       <span data-scheme-toggle></span>
     </div>
   </header>
